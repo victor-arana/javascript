@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Validation</title>
+		<script type="text/javascript">
+			function validate(phoneNumber){
+				var pattern = /^\d{3}-?\d{4}$/;
+				return pattern.test(phoneNumber);
+			}
+
+			var textTest = "123-4567";
+			console.log(validate(textTest));	 
+         	 
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

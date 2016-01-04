@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>First class functions</title>
+		<script>
+
+		var passenger = [{name: "Jane Doloop", paid: true},
+						 {name: "Dr. Evel", paid: true},
+						 {name: "Sue Property", paid: false},
+						 {name: "John Funcall", paid: true}];
+
+		function processPassengers(passengers, testFunction){
+			for (var i = 0; i < passengers.length; i++) {
+				if (testFunction(passengers[i])) {
+					return false;
+				};				
+			}
+			return true;
+		}
+
+		var allCanfly = processPassengers(passengers, checkNoFlyList);
+		if(!allCanfly){
+			console.log("The plane can't take off: we have a passenger on the no-fly-list.");
+		}
+
+		function checkPaid(passenger){
+			for (var i = 0; i < passengers.length; i++) {
+				if (!passengers[i].paid) {
+					return false;
+				};			
+			}
+			return true;
+		}
+
+		function checkNoFly (passengers) {
+			for (var i = 0; i < passengers.length; i++) {
+				if (onNoFlyList(passengers[i].name)) {
+					return false;
+				}				
+			}
+			return true;
+		}
+
+		function printPassengers (passengers) {
+			for (var i = 0; i < passengers.length; i++) {
+				console.log(passengers[i].name);
+				return false;
+			};
+			return true;
+		}
+
+
+		function checkNoFlyList(passenger){
+			return (passenger.name === "Dr. Evel");			
+		}
+
+		function checkNotPaid(passenger){
+			return (!passenger.paid);
+		}
+
+		function serveCustomer(passenger){
+			// get drink order
+			createDrinkOrder(passenger);
+			
+			// get dinner order
+			// pick up trash
+		}
+
+		function createDrinkOrder(passenger){
+			if(passenger.ticket == "firstclass"){
+				console.log("Would you like a cocktail or wine?");
+			} else{
+				console.log("Your choice is cola or water");
+			}
+		}
+
+
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

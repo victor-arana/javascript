@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Timer</title>
+		<script type="text/javascript">
+			window.onload = init;
+			function init(){
+				var map = document.getElementById("map");
+				map.onmousemove = showCoords;
+			}
+
+			function timeHandler(){
+				alert("Hey what are you doing just sitting there staring at a blank screen?")
+			}
+
+			setTimeout(timeHandler, 5000)
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>
